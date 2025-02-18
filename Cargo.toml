@@ -1,0 +1,44 @@
+[package]
+name = "replication-rally"
+version = "0.1.0"
+edition = "2021"
+
+[lib]
+name = "replication_rally"
+path = "src/lib.rs"
+
+[[bin]]
+name = "rally_director"
+path = "src/bin/director/main.rs"
+
+[[bin]]
+name = "rally_e_director"
+path = "src/bin/e_director/main.rs"
+
+[[bin]]
+name = "rally_node"
+path = "src/bin/node/main.rs"
+
+[[bin]]
+name = "rally_process"
+path = "src/bin/process/main.rs"
+
+[[bin]]
+name = "ferry_test"
+path = "src/bin/ferry_test/main.rs"
+
+[[bin]]
+name = "etcd_test"
+path = "src/bin/etcd_test/main.rs"
+
+[dependencies]
+clap = { version = "4.5", features = ["derive"] }
+console-subscriber = "0.4.0"
+csv = "1.3"
+etcd-client = "0.12"
+futures = "0.3"
+rand = "0.8"
+serde = { version = "1.0", features = ["derive"] }
+serde_json = "1.0"
+tokio = { version = "1.0", features = ["full", "tracing"] }
+tokio-stream = "0.1"
